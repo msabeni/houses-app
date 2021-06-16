@@ -38,13 +38,16 @@ module Api
                   render json: { errors: house.errors.messages }, status: 422
                 end
             end
-        
-
+            
             private
 
             def house_params
               params.require(:house).permit(:name, :image_url)
             end
+
+            def options
+                @options ||= { include: %i[reviews] }
+           end
 
         end
     end
