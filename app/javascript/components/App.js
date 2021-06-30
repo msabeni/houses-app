@@ -1,4 +1,4 @@
-import React from "react";
+/*import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Houses from "./Houses/Houses";
 import House from "./House/House"
@@ -12,4 +12,9 @@ const App = () => {
   );
 };
 
-export default App;
+export default App; */
+
+import React from "react";
+import Routes from "../routes/Index";
+
+export default props => <>{Routes}</>;

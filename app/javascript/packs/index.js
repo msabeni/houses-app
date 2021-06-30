@@ -10,10 +10,10 @@ import App from "../components/App";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
-    <Router>
-      <Route path="/" component="App" />
-    </Router>,
-    //<App />, // <Hello name="React" />,
+   // <Router>
+    //  <Route path="/" component="App" />
+   // </Router>,
+    <App />, // <Hello name="React" />,
     document.body.appendChild(document.createElement("div"))
   );
 });
