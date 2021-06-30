@@ -1,7 +1,19 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const Houses = () => {
   const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    // Our code will go here
+    axios.get('/api/v1/houses')
+    .then( resp => {
+      debugger
+    })
+    .catch( data => {
+      debugger
+    })
+  }, []);
 
   return (
     <div className="home">
