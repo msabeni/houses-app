@@ -15,6 +15,6 @@ const App = () => {
 export default App; */
 
 import React from "react";
-import Routes from "../routes/Index";
+import Routes from "../routes/index";
 
-export default props => <>{Routes}</>;
+export default (props) => <>{Routes}</>;
