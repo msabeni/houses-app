@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import axios from "axios";
 import styled from "styled-components";
+import Review from "./Review";
 
 const Column = styled.div`
   background: #fff;
@@ -13,7 +14,7 @@ const Column = styled.div`
   overflow-y: scroll;
   overflow: scroll;
 `;
-const Header = styled.div`
+const Head = styled.div`
   padding: 100px 100px 10px 100px;
   font-size: 30px;
   text-align: center;
@@ -39,6 +40,20 @@ const House = () => {
       .catch((resp) => console.log(resp));
   }, []);
 
+  let reviews;
+  if (airlines.included.length > 0) {
+    reviews = airlines.included.map((review, index) => {
+      return (
+        <Review
+          key={index}
+          title={review.attributes.title}
+          description={review.attributes.description}
+          score={review.attributes.score}
+        />
+      );
+    });
+  }
+
   return (
     // <div>
     //   <div className="column">
@@ -51,10 +66,10 @@ const House = () => {
 
     <div>
       <Column>
-        <Header>
+        <Head>
           <img src={image_url} alt={name} width="50" />
           <h1>{name}</h1>
-        </Header>
+        </Head>
         <div className="reviews">[reviews will go here]</div>
       </Column>
       <Column>[new review form will go here]</Column>

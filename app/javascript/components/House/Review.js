@@ -17,9 +17,9 @@ const Description = styled.div`
 
 const Review = (props) => {
   <Card>
-    <Title>title will go here</Title>
-    <Description>description will go here</Description>
-    <div className="review-rating">rating will go here</div>
+    <Title>{props.title}</Title>
+    <Description>{props.description}</Description>
+    <div className="review-rating">{props.score}</div>
   </Card>;
 };
 
