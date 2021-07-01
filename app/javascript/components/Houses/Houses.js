@@ -36,7 +36,7 @@ const Houses = () => {
     axios
       .get("/api/v1/houses")
       .then((resp) => {
-        setHouses(resp.data.data);
+        setHouses(resp.data);
       })
       .catch((data) => {
         debugger;
