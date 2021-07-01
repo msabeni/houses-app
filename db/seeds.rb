@@ -31,3 +31,18 @@ House.create([
       image_url: "https://www.pexels.com/photo/multicolored-wooden-houses-2374652/" 
     }
   ])
+
+  reviews = Review.create([
+    {
+        title: "New House",
+        description: "I had a lovely time",
+        score: 5,
+        house: houses.first
+    },
+        {
+        title: "Old House",
+        description: "I had a bad time",
+        score: 1,
+        house: houses.first
+    }
+])
