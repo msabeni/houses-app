@@ -34,18 +34,18 @@ const Houses = () => {
 
   useEffect(() => {
     axios
-      .get("/api/v1/houses")
+      .get("http://localhost:3000/api/v1/houses")
       .then((resp) => {
-        //console.log(resp.data)
-        setHouses(resp.data);
+        setHouses(resp.data.data);
       })
-      .catch((data) => {
-        debugger;
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
   const grid = houses.map((house, index) => {
-    return <House key={index} attributes={house.data.attributes} />;
+    console.log(house);
+    return <House key={index} attributes={house.attributes} />;
   });
 
   return (
